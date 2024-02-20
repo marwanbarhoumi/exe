@@ -1,23 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import CardList from "./Component/ListCar";
 
 function App() {
+  const boys = [
+    {
+      name: "marwan",
+      age: 25,
+      phone: 54500264,
+    },
+    {
+      name: "jalol",
+      age: 45,
+      phone: 97648340,
+    },
+    {
+      name: "mohamed",
+      age: 57,
+      phone: 52679530,
+    },
+  ];
+  const girls = [
+    {
+      name: "chayma",
+      age: 25,
+      phone: 54500264,
+    },
+    {
+      name: "marwa",
+      age: 45,
+      phone: 97648340,
+    },
+    {
+      name: "esra",
+      age: 20,
+      phone: 52679530,
+    },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Boys</h1>
+      <CardList list={boys} />
+      <h1>girls</h1>
+      <CardList list={girls} color="red" />
     </div>
   );
 }
